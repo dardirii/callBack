@@ -1,4 +1,4 @@
-import Table from "./Table";
+import Table from "./Table.js";
 
 function getData(url, cb) {
   let xhr = new XMLHttpRequest();
