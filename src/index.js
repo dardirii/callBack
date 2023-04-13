@@ -17,7 +17,7 @@ const data = getData("https://jsonplaceholder.typicode.com/users", function(data
 
 const app = document.getElementById("app");
 const table = new Table({
-  columns: ["Tittle", "Description"],
+  columns: ["ID", "Name", "Username", "Email", "Address", "Company"],
   data: [
     ["iPhone 9", "An apple mobile which is nothing like apple"],
     [

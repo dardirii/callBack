@@ -7,7 +7,6 @@ class Table {
       let open = "<thead><tr>";
       let close = "</tr></thead>";
       data.forEach((d) => {
-        console.log(d)
         open += `<th>${d}</th>`;
       });
   
