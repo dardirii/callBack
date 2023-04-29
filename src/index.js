@@ -11,15 +11,28 @@ function getData(url, cb) {
   xhr.send();
 }
 
-let data = getData("https://jsonplaceholder.typicode.com/users", function(response){
-  return response;
-})
-
-console.log(data)
-
+getData("https://jsonplaceholder.typicode.com/users", function(response){
 const columns = ["ID", "Name", "Username", "Email", "Address", "Company"]
+const data = response
+
+
+let result = [];
+
+for (let i = 0; i < data.length; i++) {
+  let arr = [];
+  arr.push(data[i].id); 
+  arr.push(data[i].name);
+  arr.push(data[i].username);
+  arr.push(data[i].email);
+  arr.push((data[i].address.street + data[i].address.suite + data[i].address.city));
+  arr.push(data[i].company.name);
+  result.push(arr); 
+}
+
+console.log(result)
 
 const app = document.getElementById("app");
-const table = new Table({columns, data});
-
+const table = new Table({columns, result});
 table.render(app);
+})
+
