@@ -20,8 +20,7 @@ class Table {
       data.forEach((d) => {
         open += `
           <tr>
-            <td>${d[0]}</td>
-            <td>${d[1]}</td>
+            <td>${d}</td>
           </tr>
         `;
       });

@@ -11,24 +11,15 @@ function getData(url, cb) {
   xhr.send();
 }
 
-const data = getData("https://jsonplaceholder.typicode.com/users", function(data){
-  console.log(data);
+let data = getData("https://jsonplaceholder.typicode.com/users", function(response){
+  return response;
 })
 
+console.log(data)
+
+const columns = ["ID", "Name", "Username", "Email", "Address", "Company"]
+
 const app = document.getElementById("app");
-const table = new Table({
-  columns: ["ID", "Name", "Username", "Email", "Address", "Company"],
-  data: [
-    ["iPhone 9", "An apple mobile which is nothing like apple"],
-    [
-      "iPhone X",
-      "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip",
-    ],
-    [
-      "Huawei P30",
-      "Huawei's re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK",
-    ],
-  ],
-});
+const table = new Table({columns, data});
 
 table.render(app);
